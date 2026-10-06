@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G WATCHES – Одит и Google Ads стратегия</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f6f8;--card:#ffffff;--ink:#14161a;--muted:#5d6470;--line:#e3e6eb;
+  --brand:#d0021b;--brand-soft:#fde8ea;--ok:#127a43;--ok-soft:#e3f5ea;--warn:#a15c00;--warn-soft:#fff2dd;
+  --info:#1a56db;--info-soft:#e6eefc;--dark:#14161a;
+  --bar:#d0021b;--bar2:#9aa3af;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1114;--card:#171a1f;--ink:#eef0f3;--muted:#a3abb7;--line:#2a2f37;
+    --brand:#ff4d5e;--brand-soft:#3a1519;--ok:#4cc38a;--ok-soft:#12291d;--warn:#f0a83a;--warn-soft:#2e2210;
+    --info:#7aa5ff;--info-soft:#152036;--dark:#000;--bar2:#59606b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1114;--card:#171a1f;--ink:#eef0f3;--muted:#a3abb7;--line:#2a2f37;
+  --brand:#ff4d5e;--brand-soft:#3a1519;--ok:#4cc38a;--ok-soft:#12291d;--warn:#f0a83a;--warn-soft:#2e2210;
+  --info:#7aa5ff;--info-soft:#152036;--dark:#000;--bar2:#59606b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--info)}
+header.hero{background:var(--dark);color:#fff;padding:48px 0 40px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.hero .tag{display:inline-block;background:var(--brand);color:#fff;font-weight:700;font-size:12px;letter-spacing:.08em;padding:4px 10px;border-radius:4px;text-transform:uppercase}
+.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.15;margin:14px 0 8px;font-weight:800}
+.hero p{color:#c9ced6;margin:0;max-width:760px}
+.hero .meta{margin-top:18px;font-size:13px;color:#9aa3af}
+nav.toc{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
+nav.toc a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:600;font-size:13px;padding:6px 12px;border-radius:999px}
+nav.toc a:hover{background:var(--brand-soft);color:var(--brand)}
+section{padding:40px 0 8px;scroll-margin-top:52px}
+h2{font-size:26px;margin:0 0 6px;font-weight:800;letter-spacing:-.01em}
+h2 .num{color:var(--brand);margin-right:8px}
+h3{font-size:18px;margin:28px 0 10px;font-weight:700}
+.lead{color:var(--muted);margin:0 0 18px;max-width:820px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:14px 0}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .l{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.kpi .v{font-size:28px;font-weight:800;margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12.5px;color:var(--muted)}
+.tbl{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--bg);font-weight:700}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.p-red{background:var(--brand-soft);color:var(--brand)}
+.p-ok{background:var(--ok-soft);color:var(--ok)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-info{background:var(--info-soft);color:var(--info)}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);padding:14px 16px;border-radius:8px;margin:14px 0}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout.info{border-color:var(--info);background:var(--info-soft)}
+.callout b{display:block;margin-bottom:2px}
+.grid>.callout{margin:0}
+ul.clean{margin:8px 0;padding-left:18px}
+ul.clean li{margin:4px 0}
+ol.steps{margin:8px 0;padding-left:20px}
+ol.steps li{margin:6px 0}
+.bar{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;font-size:13px;margin:6px 0}
+.bar .track{background:var(--bg);border-radius:4px;height:14px;overflow:hidden}
+.bar .fill{height:100%;background:var(--bar);border-radius:4px}
+.bar .fill.g{background:var(--bar2)}
+.bar .val{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.tree{font-size:13.5px}
+.tree .fam{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--card)}
+.tree .fam h4{margin:0 0 6px;font-size:15px;display:flex;justify-content:space-between;gap:8px}
+.tree .fam h4 span{color:var(--muted);font-weight:600;font-size:12.5px}
+.tree .chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:12.5px;background:var(--bg)}
+.chip b{font-variant-numeric:tabular-nums}
+.phase{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px;position:relative}
+.phase .ph{font-size:12px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.06em}
+.phase h4{margin:4px 0 8px;font-size:17px}
+.camp{border:1px solid var(--line);border-radius:12px;background:var(--card);margin:14px 0;overflow:hidden}
+.camp .hd{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--bg)}
+.camp .hd h4{margin:0;font-size:16px}
+.camp .bd{padding:14px 18px}
+.camp .meta{display:flex;flex-wrap:wrap;gap:6px}
+.kw{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;overflow-wrap:anywhere}
+.grid>*{min-width:0}
+body{overflow-x:hidden}
+footer{padding:40px 16px;color:var(--muted);font-size:12.5px;text-align:center}
+@media (max-width:600px){
+  .bar{grid-template-columns:96px 1fr 70px}
+  section{padding-top:28px}
+  h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">G WATCHES · gwatches.bg</span>
+    <h1>Одит на дигиталното присъствие и стратегия за Google Ads</h1>
+    <p>Google Business профили, трафик за септември 2026 (GA4 + Search Console), структура на онлайн магазина и проучване на ключови думи на български с предложена структура на кампаниите.</p>
+    <div class="meta">Изготвен: 4 октомври 2026 · Период на данните: 1–30 септември 2026 · Пазар: България, език: български</div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#summary">Резюме</a>
+  <a href="#gbp">1. Business профили</a>
+  <a href="#ga4">2. Трафик септември</a>
+  <a href="#site">3. Структура на сайта</a>
+  <a href="#kw">4.1 Ключови думи</a>
+  <a href="#strategy">Стратегия</a>
+  <a href="#campaigns">4.2 Кампании</a>
+  <a href="#next">Следващи стъпки</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- SUMMARY -->
+<section id="summary">
+  <h2>Резюме</h2>
+  <p class="lead">Петте неща, които имат най-голямо значение преди старта на рекламите и пиковия сезон (Black Friday на 27 ноември и Коледа).</p>
+  <div class="grid g2">
+    <div class="callout"><b>1. Merchant Center не е активен</b>Google &amp; YouTube в Shopify е свързан с Google Ads, но Merchant Center е „Inactive“. Без продуктов фийд няма Shopping и Performance Max. Това е блокер №1.</div>
+    <div class="callout"><b>2. 58% от приходите в GA4 са „Unassigned“</b>1 232 сесии с 0% ангажираност носят €1 824 от €3 165. Покупките губят източника си, затова не се вижда кой канал реално продава.</div>
+    <div class="callout warn"><b>3. Миграцията е в ход</b>През септември трафикът влиза основно през старите <span class="kw">.html</span> адреси. 301 пренасочванията към Shopify работят (проверени 6 от 6).</div>
+    <div class="callout warn"><b>4. Отзивите в Google нямат отговори</b>Младост има 4,5★ (111 отзива), Люлин има 4,4★ (35). Последните негативни отзиви и в двата обекта стоят без отговор.</div>
+    <div class="callout ok"><b>5. Търсенето е евтино и с ясно намерение</b>Моделни и серийни заявки (GA-2100, F-91W, DW-5600, Edifice, Pro Trek) струват €0,06–0,45 за клик. Там ще е старта: bottom-funnel и продуктов фийд.</div>
+    <div class="callout info"><b>Органичното търсене е най-добрият източник</b>32,8% от сесиите, 71,5% ангажираност и €747 проследими приходи. Платеното търсене (старата кампания) носи 25,7% от сесиите, но само 9% от приходите.</div>
+  </div>
+</section>
+
+<!-- 1. GBP -->
+<section id="gbp">
+  <h2><span class="num">1</span>Google Business профили</h2>
+  <p class="lead">Два потвърдени профила в Хит Макс. Препоръките са по приоритет.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Профил</th><th class="n">Рейтинг</th><th class="n">Отзиви</th><th class="n">Показвания</th><th>Телефон</th><th>Работно време</th><th>Статус на отзивите</th></tr></thead>
+    <tbody>
+      <tr><td><b>CASIO Mladost</b><br><span style="color:var(--muted);font-size:12.5px">HIT Max Младост, бул. „Ал. Малинов“ 75</span></td><td class="n">4,5★</td><td class="n">111</td><td class="n">25 391</td><td>089 305 0401</td><td>до 19:00</td><td><span class="pill p-red">Без отговори</span> 2 скорошни негативни</td></tr>
+      <tr><td><b>CASIO Liulin</b><br><span style="color:var(--muted);font-size:12.5px">HIT Max Люлин, ул. „Обелско шосе“ 20</span></td><td class="n">4,4★</td><td class="n">35</td><td class="n">10 659</td><td>089 305 0402</td><td>до 19:00</td><td><span class="pill p-red">Без отговори</span> 1 негативен (преди 3 мес.)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Направете веднага</h3>
+      <ol class="steps">
+        <li><b>Отговорете на всички отзиви</b>, започвайки с негативните („затворено в работно време“, „продупчена каишка“, „конденз след смяна на батерия“). Отговор до 48 ч., с извинение и телефон за връзка.</li>
+        <li><b>Добавете UTM към линка за уебсайт</b>, например <span class="kw">gwatches.bg/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gbp_mladost</span> (и <span class="kw">gbp_liulin</span>). Сега този трафик се губи в Organic и Direct.</li>
+        <li><b>Проверете работното време.</b> И двата профила показват затваряне в 19:00. Ако Хит Макс работи по-дълго, синхронизирайте. Добавете празнично работно време за ноември и декември.</li>
+        <li><b>Описание (до 750 знака)</b>: „Оторизиран магазин за оригинални часовници Casio: G-SHOCK, EDIFICE, PRO TREK, BABY-G, Vintage. 2 г. гаранция, смяна на батерия и каишки, поръчка онлайн с вземане от магазина.“</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">През следващите 2–4 седмици</h3>
+      <ol class="steps" start="5">
+        <li><b>Вторична категория</b> „Сервиз за часовници“, ако се предлага смяна на батерия или каишка. Основната остава „Магазин за часовници“.</li>
+        <li><b>Секция „Продукти“</b>: 10–15 топ модела на обект (GA-2100, DW-5600, F-91W, Edifice, Pro Trek) с линк към продуктовата страница.</li>
+        <li><b>Публикации всяка седмица</b>: нови модели, промоции, Black Friday. Люлин няма снимки в категория „Часовник“. Качете поне 15 нови снимки на обект (витрина, интериор, модели).</li>
+        <li><b>Атрибути</b>: вземане от магазина, методи на плащане, достъпност.</li>
+        <li><b>Система за отзиви</b>: QR код на касата и линк в имейла при вземане на онлайн поръчка. Цел за Люлин: от 35 до 80+ отзива до края на годината.</li>
+        <li><b>Свържете двата профила с Google Ads</b> като location assets, за адрес и разстояние в рекламите. Заедно с Merchant Center това отключва и local inventory.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout info"><b>Име на профила</b>Не добавяйте ключови думи в името („CASIO Младост – часовници G-Shock“). Google наказва това. Името трябва да съвпада с табелата на обекта. Ако на нея пише „G WATCHES“, изравнете името с нея.</div>
+</section>
+
+<!-- 2. GA4 -->
+<section id="ga4">
+  <h2><span class="num">2</span>Трафик и продажби – септември 2026</h2>
+  <p class="lead">Източник: GA4 (property „G WATCHES“) и Google Search Console (sc-domain:gwatches.bg), 1–30 септември 2026.</p>
+
+  <div class="grid g4">
+    <div class="kpi"><div class="l">Сесии</div><div class="v">5 309</div><div class="s">2 616 активни потребители</div></div>
+    <div class="kpi"><div class="l">Ангажираност</div><div class="v">53,6%</div><div class="s">1 мин 01 сек средно на сесия</div></div>
+    <div class="kpi"><div class="l">Приходи (GA4)</div><div class="v">€3 165</div><div class="s">34 купувачи, 37 продадени бр.</div></div>
+    <div class="kpi"><div class="l">Среден приход на купувач</div><div class="v">≈ €93</div><div class="s">add-to-cart: 233 · прегледи на продукт: 5 596</div></div>
+  </div>
+
+  <h3>Канали (Default Channel Group)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Канал</th><th class="n">Сесии</th><th class="n">Дял</th><th class="n">Ангаж.</th><th class="n">Key events</th><th class="n">Key event rate</th><th class="n">Приходи</th></tr></thead>
+    <tbody>
+      <tr><td><b>Organic Search</b></td><td class="n">1 743</td><td class="n">32,8%</td><td class="n">71,5%</td><td class="n">113</td><td class="n">2,24%</td><td class="n">€747,20</td></tr>
+      <tr><td><b>Paid Search</b></td><td class="n">1 365</td><td class="n">25,7%</td><td class="n">79,3%</td><td class="n">28</td><td class="n">0,81%</td><td class="n">€288,90</td></tr>
+      <tr><td><b>Unassigned</b> <span class="pill p-red">проблем</span></td><td class="n">1 256</td><td class="n">23,7%</td><td class="n">0,9%</td><td class="n">150</td><td class="n">4,46%</td><td class="n">€1 824,10</td></tr>
+      <tr><td><b>Direct</b></td><td class="n">694</td><td class="n">13,1%</td><td class="n">50,6%</td><td class="n">44</td><td class="n">2,88%</td><td class="n">€244,70</td></tr>
+      <tr><td>AI Assistant (ChatGPT)</td><td class="n">80</td><td class="n">1,5%</td><td class="n">62,5%</td><td class="n">7</td><td class="n">2,50%</td><td class="n">€59,90</td></tr>
+      <tr><td>Cross-network (PMax)</td><td class="n">60</td><td class="n">1,1%</td><td class="n">91,7%</td><td class="n">1</td><td class="n">1,67%</td><td class="n">€0</td></tr>
+      <tr><td>Referral</td><td class="n">46</td><td class="n">0,9%</td><td class="n">34,8%</td><td class="n">0</td><td class="n">0%</td><td class="n">€0</td></tr>
+      <tr><td>Organic Social</td><td class="n">37</td><td class="n">0,7%</td><td class="n">83,8%</td><td class="n">1</td><td class="n">2,70%</td><td class="n">€0</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Сесии по канал</h3>
+      <div class="bar"><span>Organic Search</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">1 743</span></div>
+      <div class="bar"><span>Paid Search</span><div class="track"><div class="fill" style="width:78%"></div></div><span class="val">1 365</span></div>
+      <div class="bar"><span>Unassigned</span><div class="track"><div class="fill g" style="width:72%"></div></div><span class="val">1 256</span></div>
+      <div class="bar"><span>Direct</span><div class="track"><div class="fill" style="width:40%"></div></div><span class="val">694</span></div>
+      <div class="bar"><span>AI Assistant</span><div class="track"><div class="fill" style="width:4.6%"></div></div><span class="val">80</span></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Приходи по канал</h3>
+      <div class="bar"><span>Unassigned</span><div class="track"><div class="fill g" style="width:100%"></div></div><span class="val">€1 824</span></div>
+      <div class="bar"><span>Organic Search</span><div class="track"><div class="fill" style="width:41%"></div></div><span class="val">€747</span></div>
+      <div class="bar"><span>Paid Search</span><div class="track"><div class="fill" style="width:15.8%"></div></div><span class="val">€289</span></div>
+      <div class="bar"><span>Direct</span><div class="track"><div class="fill" style="width:13.4%"></div></div><span class="val">€245</span></div>
+      <div class="bar"><span>AI Assistant</span><div class="track"><div class="fill" style="width:3.3%"></div></div><span class="val">€60</span></div>
+    </div>
+  </div>
+
+  <div class="callout"><b>Най-добрият източник е органичното търсене в Google</b>„google / organic“ носи 1 631 сесии, 107 key events и €697 приходи. Приходът на сесия е над два пъти по-висок от платения трафик. Старата Search кампания („SN – Часовници – SS“) носи 1 362 сесии, но с key event rate 0,73%. Широките generic думи („часовник“) докарват трафик, който не купува. Това е основният урок за новия акаунт.</div>
+
+  <h3>Източник / Medium – топ 10</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Source / medium</th><th class="n">Сесии</th><th class="n">Ангаж.</th><th class="n">Key events</th><th class="n">Приходи</th></tr></thead>
+    <tbody>
+      <tr><td>google / organic</td><td class="n">1 631</td><td class="n">71,6%</td><td class="n">107</td><td class="n">€697,30</td></tr>
+      <tr><td>google / cpc</td><td class="n">1 422</td><td class="n">79,8%</td><td class="n">29</td><td class="n">€288,90</td></tr>
+      <tr><td>(not set)</td><td class="n">1 232</td><td class="n">0%</td><td class="n">147</td><td class="n">€1 824,10</td></tr>
+      <tr><td>(direct) / (none)</td><td class="n">694</td><td class="n">50,6%</td><td class="n">44</td><td class="n">€244,70</td></tr>
+      <tr><td>chatgpt.com / ai-assistant</td><td class="n">79</td><td class="n">62,0%</td><td class="n">7</td><td class="n">€59,90</td></tr>
+      <tr><td>search.google.com / referral</td><td class="n">62</td><td class="n">66,1%</td><td class="n">6</td><td class="n">€49,90</td></tr>
+      <tr><td>bing / organic</td><td class="n">41</td><td class="n">80,5%</td><td class="n">0</td><td class="n">€0</td></tr>
+      <tr><td>theMarketer / automation</td><td class="n">23</td><td class="n">43,5%</td><td class="n">3</td><td class="n">€0</td></tr>
+      <tr><td>m.abv.bg / referral</td><td class="n">17</td><td class="n">11,8%</td><td class="n">0</td><td class="n">€0</td></tr>
+      <tr><td>casiosell.bg / referral</td><td class="n">12</td><td class="n">41,7%</td><td class="n">0</td><td class="n">€0</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Ключови думи от Google, които докарват трафик (Search Console)</h3>
+  <div class="grid g4">
+    <div class="kpi"><div class="l">Кликове</div><div class="v">1 460</div></div>
+    <div class="kpi"><div class="l">Импресии</div><div class="v">39 200</div></div>
+    <div class="kpi"><div class="l">CTR</div><div class="v">3,7%</div></div>
+    <div class="kpi"><div class="l">Средна позиция</div><div class="v">7,6</div></div>
+  </div>
+  <div class="grid g2">
+    <div class="tbl"><table>
+      <thead><tr><th>Топ заявки по кликове</th><th class="n">Кликове</th><th class="n">Импр.</th><th class="n">Поз.</th></tr></thead>
+      <tbody>
+        <tr><td>casiosell</td><td class="n">29</td><td class="n">40</td><td class="n">1,0</td></tr>
+        <tr><td>casio pro trek</td><td class="n">25</td><td class="n">348</td><td class="n">5,0</td></tr>
+        <tr><td>касио</td><td class="n">16</td><td class="n">731</td><td class="n">6,9</td></tr>
+        <tr><td>casio</td><td class="n">15</td><td class="n">2 445</td><td class="n">6,7</td></tr>
+        <tr><td>casio f91w</td><td class="n">11</td><td class="n">300</td><td class="n">7,5</td></tr>
+        <tr><td>casio sell</td><td class="n">10</td><td class="n">24</td><td class="n">1,0</td></tr>
+        <tr><td>casio automatic</td><td class="n">8</td><td class="n">88</td><td class="n">3,4</td></tr>
+        <tr><td>casio edifice automatic</td><td class="n">7</td><td class="n">89</td><td class="n">3,5</td></tr>
+        <tr><td>casio f-91w</td><td class="n">6</td><td class="n">160</td><td class="n">5,1</td></tr>
+        <tr><td>касио часовници</td><td class="n">6</td><td class="n">103</td><td class="n">6,6</td></tr>
+        <tr><td>casio protrek</td><td class="n">6</td><td class="n">100</td><td class="n">5,3</td></tr>
+        <tr><td>g shock</td><td class="n">5</td><td class="n">416</td><td class="n">10,5</td></tr>
+        <tr><td>gw-bx5600 цена</td><td class="n">5</td><td class="n">22</td><td class="n">4,5</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Много импресии, нисък CTR</th><th class="n">Импр.</th><th class="n">CTR</th><th class="n">Поз.</th></tr></thead>
+      <tbody>
+        <tr><td>casio</td><td class="n">2 445</td><td class="n">0,6%</td><td class="n">6,7</td></tr>
+        <tr><td>касио</td><td class="n">731</td><td class="n">2,2%</td><td class="n">6,9</td></tr>
+        <tr><td>gshock</td><td class="n">567</td><td class="n">0,4%</td><td class="n">7,8</td></tr>
+        <tr><td>casio watch</td><td class="n">551</td><td class="n">0,5%</td><td class="n">7,0</td></tr>
+        <tr><td>casio часовници</td><td class="n">427</td><td class="n">0,9%</td><td class="n">8,8</td></tr>
+        <tr><td>g shock</td><td class="n">416</td><td class="n">1,2%</td><td class="n">10,5</td></tr>
+        <tr><td>casio shop</td><td class="n">357</td><td class="n">1,1%</td><td class="n">5,1</td></tr>
+        <tr><td>casio g shock</td><td class="n">285</td><td class="n">1,1%</td><td class="n">11,3</td></tr>
+        <tr><td>g-shock</td><td class="n">229</td><td class="n">0,9%</td><td class="n">13,3</td></tr>
+        <tr><td>часовници casio</td><td class="n">198</td><td class="n">1,0%</td><td class="n">10,3</td></tr>
+        <tr><td>g shock часовници</td><td class="n">122</td><td class="n">2,5%</td><td class="n">11,2</td></tr>
+        <tr><td>магазин за часовници софия</td><td class="n">85</td><td class="n">2,4%</td><td class="n">11,0</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="callout info"><b>Какво показва Search Console</b>Сайтът е на позиция 6–13 за основните заявки („casio“, „g shock“, „casio часовници“), където CTR е под 1%. Платената реклама на точно тези думи ще вземе позициите над органичните резултати. Моделните заявки (F-91W, Pro Trek, GW-BX5600, Edifice Automatic) вече са в топ 5 и конвертират органично.</div>
+
+  <h3>Входни страници и продукти</h3>
+  <div class="grid g2">
+    <div class="tbl"><table>
+      <thead><tr><th>Входна страница (стар URL)</th><th class="n">Сесии</th><th class="n">Key ev.</th><th class="n">Приходи</th></tr></thead>
+      <tbody>
+        <tr><td>/ (начало)</td><td class="n">1 116</td><td class="n">34</td><td class="n">€49,90</td></tr>
+        <tr><td>/g-shock.html</td><td class="n">789</td><td class="n">21</td><td class="n">€496,00</td></tr>
+        <tr><td>/promotion.html</td><td class="n">228</td><td class="n">10</td><td class="n">€0</td></tr>
+        <tr><td>/search.php</td><td class="n">154</td><td class="n">10</td><td class="n">€0</td></tr>
+        <tr><td>/baby-g.html</td><td class="n">150</td><td class="n">0</td><td class="n">€0</td></tr>
+        <tr><td>/pro-trek.html</td><td class="n">99</td><td class="n">1</td><td class="n">€0</td></tr>
+        <tr><td>/edifice.html</td><td class="n">84</td><td class="n">0</td><td class="n">€0</td></tr>
+        <tr><td>/automatic.html</td><td class="n">72</td><td class="n">0</td><td class="n">€0</td></tr>
+        <tr><td>GW-B5600BC-1BER (продукт)</td><td class="n">58</td><td class="n">4</td><td class="n">€0</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Най-разглеждани продукти</th><th class="n">Прегледи</th></tr></thead>
+      <tbody>
+        <tr><td>G-SHOCK DW-5000R-1AER</td><td class="n">81</td></tr>
+        <tr><td>G-SHOCK GW-B5600BC-1BER</td><td class="n">79</td></tr>
+        <tr><td>CASIO F-91W-1YEG</td><td class="n">72</td></tr>
+        <tr><td>EDIFICE EFK-110D-7AER</td><td class="n">66</td></tr>
+        <tr><td>PRO TREK PRJ-B001B-2ER</td><td class="n">62</td></tr>
+        <tr><td>G-SHOCK Mudmaster GWG-2000-1A5ER</td><td class="n">57</td></tr>
+        <tr><td>G-SHOCK Mudmaster GWG-B1000-1A4ER</td><td class="n">49</td></tr>
+        <tr><td>G-SHOCK GA-700CF-1AER</td><td class="n">44</td></tr>
+        <tr><td>CASIO A168WA-1YES</td><td class="n">42</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <p style="color:var(--muted);font-size:13.5px">Продадени артикули: GA-010-1A1ER (2 бр.), A100WE, A158WETB, A700WE, A700WEGL, AQ-240E, AQ-800E, GA-700CF и др. Обемът е от достъпни Vintage и Collection модели (€30–130), а интересът е към G-SHOCK, Edifice и Pro Trek.</p>
+
+  <h3>Проблеми с проследяването (трябва да се оправят преди рекламите)</h3>
+  <div class="grid g2">
+    <div class="callout"><b>„Unassigned“ / (not set) = 58% от приходите</b>Покупките се записват в сесии без източник. Типично е за checkout, който стартира нова сесия, или за purchase event, изпратен от сървъра без client_id. Проверете дали GA4 се праща само веднъж (Shopify Google &amp; YouTube app ИЛИ GTM, не и двете) и дали Consent Mode v2 е настроен.</div>
+    <div class="callout"><b>Add-to-cart = 0 за най-разглежданите продукти</b>233 добавяния общо, но 0 за топ продуктите. Ecommerce събитията са непълни или идват само от част от страниците (стара и нова платформа едновременно).</div>
+    <div class="callout warn"><b>Грешна връзка със Search Console в GA4</b>Отчетът „Queries“ в GA4 показва само 3 заявки. Свързан е грешен ресурс или URL-prefix property. Свържете domain property <span class="kw">sc-domain:gwatches.bg</span>.</div>
+    <div class="callout warn"><b>GTM контейнерът е празен</b><span class="kw">GTM-5SVGK3X4</span> („www.gwatches.bg“) няма тагове и не получава данни. В сайта е зареден GA4 и един Google Ads таг през Shopify. Решете кой метод остава, за да няма дублиране.</div>
+  </div>
+</section>
+
+<!-- 3. SITE -->
+<section id="site">
+  <h2><span class="num">3</span>Структура на онлайн магазина</h2>
+  <p class="lead">Shopify магазин, проверен на 4.10.2026. Данните са от публичния каталог на gwatches.bg.</p>
+
+  <div class="grid g4">
+    <div class="kpi"><div class="l">Продукти</div><div class="v">1 153</div><div class="s">всички CASIO, тип „Часовници“</div></div>
+    <div class="kpi"><div class="l">В наличност</div><div class="v">1 029</div><div class="s">89% · 124 без наличност</div></div>
+    <div class="kpi"><div class="l">Колекции</div><div class="v">35</div><div class="s">вкл. 4 служебни</div></div>
+    <div class="kpi"><div class="l">Цени</div><div class="v">€19,90–799</div><div class="s">медиана €109</div></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Ценови диапазони (брой продукти)</h3>
+      <div class="bar"><span>до €100</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">553</span></div>
+      <div class="bar"><span>€100–200</span><div class="track"><div class="fill" style="width:76%"></div></div><span class="val">421</span></div>
+      <div class="bar"><span>€200–400</span><div class="track"><div class="fill" style="width:26.6%"></div></div><span class="val">147</span></div>
+      <div class="bar"><span>€400–800</span><div class="track"><div class="fill" style="width:5.8%"></div></div><span class="val">32</span></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Серии: брой и цени</h3>
+      <div class="tbl" style="margin:0;border:0"><table style="min-width:0">
+        <thead><tr><th>Серия</th><th class="n">Бр.</th><th class="n">От</th><th class="n">Медиана</th><th class="n">До</th></tr></thead>
+        <tbody>
+          <tr><td>G-SHOCK</td><td class="n">436</td><td class="n">€79</td><td class="n">€139</td><td class="n">€799</td></tr>
+          <tr><td>COLLECTION</td><td class="n">312</td><td class="n">€19,90</td><td class="n">€49,90</td><td class="n">€299</td></tr>
+          <tr><td>EDIFICE</td><td class="n">187</td><td class="n">€99,90</td><td class="n">€149</td><td class="n">€509</td></tr>
+          <tr><td>VINTAGE</td><td class="n">162</td><td class="n">€35</td><td class="n">€59,90</td><td class="n">€249</td></tr>
+          <tr><td>BABY-G</td><td class="n">34</td><td class="n">€79,90</td><td class="n">€89,90</td><td class="n">€149</td></tr>
+          <tr><td>PRO TREK</td><td class="n">22</td><td class="n">€159</td><td class="n">€299</td><td class="n">€499</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <h3>Дърво на категориите (меню → колекция → брой продукти)</h3>
+  <div class="grid g3 tree">
+    <div class="fam"><h4>G-SHOCK <span>437</span></h4><div class="chips">
+      <span class="chip">Master of G <b>24</b></span><span class="chip">Full Metal <b>10</b></span><span class="chip">G-Steel <b>24</b></span><span class="chip">G-Squad <b>30</b></span><span class="chip">G-Lide <b>10</b></span><span class="chip">Digital <b>129</b></span><span class="chip">Analog-Digital <b>245</b></span><span class="chip">Origin <b>44</b></span><span class="chip">Classic <b>207</b></span><span class="chip">Limited <b>15</b></span></div></div>
+    <div class="fam"><h4>EDIFICE <span>187</span></h4><div class="chips">
+      <span class="chip">Bluetooth <b>39</b></span><span class="chip">Premium <b>11</b></span><span class="chip">Classic <b>139</b></span><span class="chip">Automatic <b>9</b></span></div></div>
+    <div class="fam"><h4>VINTAGE <span>162</span></h4><div class="chips">
+      <span class="chip">Iconic <b>69</b></span><span class="chip">Edgy <b>68</b></span><span class="chip">Mini <b>20</b></span><span class="chip">Round <b>5</b></span></div></div>
+    <div class="fam"><h4>COLLECTION <span>312</span></h4><div class="chips">
+      <span class="chip">Men <b>204</b></span><span class="chip">Women <b>119</b></span><span class="chip">Radio Controlled <b>7</b></span></div></div>
+    <div class="fam"><h4>BABY-G <span>37</span></h4><div class="chips">
+      <span class="chip">Analog Digital <b>13</b></span><span class="chip">Digital <b>24</b></span><span class="chip">Urban <b>23</b></span></div></div>
+    <div class="fam"><h4>PRO TREK <span>22</span></h4><div class="chips"><span class="chip">без подкатегории</span></div></div>
+    <div class="fam"><h4>Служебни / промо</h4><div class="chips">
+      <span class="chip">Нови модели <b>91</b></span><span class="chip">Промоции <b>14</b></span><span class="chip">Очаквайте скоро <b>16</b></span><span class="chip">Популярни продукти <b>1 029</b></span><span class="chip">Home page <b>1</b></span></div></div>
+  </div>
+
+  <h3>Какво работи</h3>
+  <ul class="clean">
+    <li>Ясна йерархия по серии, която съвпада с начина, по който Casio купувачите търсят (G-SHOCK, Edifice, Pro Trek, Vintage).</li>
+    <li>SEO основите са налице: уникални title и meta description на колекциите (напр. „Casio G-SHOCK часовници | G WATCHES“), описателни текстове на колекциите, мета описания с характеристики на продуктите.</li>
+    <li>Всички продукти имат снимки и описание. Транслитерираните URL адреси съдържат модела (<span class="kw">/products/chasovnik-casio-g-shock-gw-5000u-1er</span>).</li>
+    <li>Старите Gomba адреси (<span class="kw">/g-shock.html</span>, <span class="kw">/promotion.html</span>, продуктови .html) пренасочват 301 към новите.</li>
+  </ul>
+
+  <h3>Какво да се подобри (по приоритет)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th style="width:34%">Проблем</th><th>Препоръка</th><th>Приоритет</th></tr></thead>
+    <tbody>
+      <tr><td><b>Няма колекции по пол</b> за целия каталог. „Мъжки / дамски часовници“ имат 1K–10K търсения месечно, но съществуват само в рамките на Collection.</td><td>Създайте <b>„Мъжки часовници Casio“</b> (G-SHOCK + Edifice + Pro Trek + Collection Men) и <b>„Дамски часовници Casio“</b> (Baby-G + Vintage Mini + Collection Women + дамски G-SHOCK) като автоматични колекции по таг.</td><td><span class="pill p-red">Висок</span></td></tr>
+      <tr><td><b>Няма колекции по функция и повод</b>, които хората търсят: соларни, детски, подарък, цена.</td><td>Добавете: <b>Соларни (Tough Solar)</b>, <b>Детски часовници</b> (~18 модела LW/LRW), <b>Подаръци до €50 / до €100</b>, <b>Bluetooth</b> за всички серии (сега е само в Edifice).</td><td><span class="pill p-red">Висок</span></td></tr>
+      <tr><td><b>Дублирани имена в менюто</b>: „DIGITAL“ и „CLASSIC“ се появяват и при G-SHOCK, и при BABY-G / EDIFICE.</td><td>Преименувайте заглавията на колекциите: „G-SHOCK Digital“, „Baby-G Digital“, „Edifice Classic“. По-ясно е за потребителя и за Google.</td><td><span class="pill p-warn">Среден</span></td></tr>
+      <tr><td><b>„Популярни продукти“ съдържа 1 029 артикула</b>, т.е. целия каталог.</td><td>Ограничете до 20–40 реални бестселъра (по продажби). Ползвайте я за начална страница и ремаркетинг.</td><td><span class="pill p-warn">Среден</span></td></tr>
+      <tr><td><b>Несъответствия в заглавията</b>: 650 продукта започват с „ЧАСОВНИК CASIO“ (главни букви), 503 с „Часовник CASIO“. Title тагът на продукта завършва с „| G-Watches – G WATCHES“ (дублиран бранд).</td><td>Единен формат: <span class="kw">Часовник Casio G-SHOCK GA-2100-1AER – мъжки, соларен</span>. Махнете дублирането в SEO title. Тези заглавия отиват и в Merchant Center фийда.</td><td><span class="pill p-warn">Среден</span></td></tr>
+      <tr><td><b>124 продукта без наличност</b> (10,8%) + 16 в „Очаквайте скоро“.</td><td>Да остават индексирани, с „уведоми ме“ (SC Back in Stock вече е инсталиран). Изключете ги от рекламите чрез фийда.</td><td><span class="pill p-info">Нисък</span></td></tr>
+      <tr><td><b>Няма аксесоари</b>. Има търсене за каишки (100–1K) и кутии за часовници (1K–10K).</td><td>Опционално: каишки и батерии като допълнителни продажби и услуга в магазините. Дотогава тези думи са негативни.</td><td><span class="pill p-info">Нисък</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4.1 KW -->
+<section id="kw">
+  <h2><span class="num">4.1</span>Проучване на ключови думи – България, български</h2>
+  <p class="lead">Източник: Google Ads Keyword Planner (Bulgaria, Bulgarian, Google Search, септ. 2025 – авг. 2026), около 10 000 идеи, филтрирани по асортимента на gwatches.bg, плюс реалните заявки от Search Console. Акаунтът няма история на разходите, затова обемите са в диапазони. CPC = цена за топ позиция (нисък–висок диапазон).</p>
+
+  <div class="callout info"><b>Как да четете таблиците</b>Интент: <span class="pill p-ok">Покупка</span> = модел или „цена“, <span class="pill p-info">Магазин</span> = търси Casio магазин, <span class="pill p-warn">Категория</span> = сравнява и разглежда, <span class="pill p-red">Широк</span> = общ интерес, нисък CR.</div>
+
+  <h3>A. Casio магазин / навигационни <span class="pill p-info">Магазин</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ключова дума</th><th class="n">Търсения/мес.</th><th>Конкур.</th><th class="n">CPC (€)</th><th>Бележка</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">casio shop</td><td class="n">1K–10K</td><td>Средна</td><td class="n">0,10–0,29</td><td>Органично поз. 5,1, CTR 1,1%</td></tr>
+      <tr><td class="kw">casio bg / casiobg</td><td class="n">1K–10K</td><td>Средна</td><td class="n">0,06–0,34</td><td>Търсят официален Casio България</td></tr>
+      <tr><td class="kw">касио шоп</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,08–0,25</td><td></td></tr>
+      <tr><td class="kw">casio магазин / casio магазин софия</td><td class="n">10–100</td><td>—</td><td class="n">—</td><td>Search Console; локален интент</td></tr>
+      <tr><td class="kw">casio bulgaria / casio българия</td><td class="n">10–100</td><td>—</td><td class="n">—</td><td>Search Console</td></tr>
+      <tr><td class="kw">g watches / gwatches</td><td class="n">&lt;100</td><td>—</td><td class="n">—</td><td>Собствен бранд, поз. 1,5–1,9</td></tr>
+      <tr><td class="kw">магазин за часовници софия</td><td class="n">10–100</td><td>—</td><td class="n">—</td><td>Search Console; за локални кампании</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>B. Casio – категория, пол <span class="pill p-warn">Категория</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ключова дума</th><th class="n">Търсения/мес.</th><th>Конкур.</th><th class="n">CPC (€)</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">casio часовници</td><td class="n">1K–10K</td><td>Висока</td><td class="n">0,12–0,29</td></tr>
+      <tr><td class="kw">часовници casio / касио часовници / часовници касио</td><td class="n">100–1K (всяка)</td><td>Висока</td><td class="n">0,10–0,33</td></tr>
+      <tr><td class="kw">часовник casio</td><td class="n">100–1K</td><td>Висока</td><td class="n">0,14–0,35</td></tr>
+      <tr><td class="kw">мъжки часовници casio / мъжки часовник casio</td><td class="n">100–1K</td><td>Висока</td><td class="n">0,14–0,45</td></tr>
+      <tr><td class="kw">дамски часовници casio / дамски часовник casio / casio дамски часовник</td><td class="n">100–1K</td><td>Висока</td><td class="n">0,14–0,39</td></tr>
+      <tr><td class="kw">детски часовник casio</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,19–0,48</td></tr>
+      <tr><td class="kw">casio collection</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,07–0,22</td></tr>
+      <tr><td class="kw">casio</td><td class="n">10K–100K</td><td>Средна</td><td class="n">0,06–0,25</td></tr>
+    </tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:13.5px">„casio“ само по себе си: само exact match с нисък таван на CPC. Тази заявка включва калкулатори, синтезатори и други продукти на Casio.</p>
+
+  <h3>C. G-SHOCK <span class="pill p-ok">Покупка</span> / <span class="pill p-warn">Категория</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ключова дума</th><th class="n">Търсения/мес.</th><th>Конкур.</th><th class="n">CPC (€)</th><th class="n">Продукти в сайта</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">g shock / casio g shock / g sh</td><td class="n">1K–10K</td><td>Средна</td><td class="n">0,09–0,32</td><td class="n">436</td></tr>
+      <tr><td class="kw">часовник g shock / часовници g shock</td><td class="n">100–1K</td><td>Ср./Висока</td><td class="n">0,12–0,45</td><td class="n">436</td></tr>
+      <tr><td class="kw">g shock цена</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,10–0,27</td><td class="n">—</td></tr>
+      <tr><td class="kw">g shock дамски</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,11–0,33</td><td class="n">—</td></tr>
+      <tr><td class="kw">casio g shock solar</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,08–0,21</td><td class="n">—</td></tr>
+      <tr><td class="kw">ga 2100 / g shock ga 2100 / casio ga 2100 / ga2100</td><td class="n">100–1K (всяка)</td><td>Ниска–Ср.</td><td class="n">0,09–0,27</td><td class="n">47</td></tr>
+      <tr><td class="kw">dw 5600 / g shock dw 5600 / gw b5600</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,09–0,26</td><td class="n">37</td></tr>
+      <tr><td class="kw">g shock ga 100 / casio g shock ga 100</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,10–0,26</td><td class="n">11</td></tr>
+      <tr><td class="kw">casio mudmaster</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,10–0,26</td><td class="n">7</td></tr>
+      <tr><td class="kw">casio rangeman</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,08–0,26</td><td class="n">5</td></tr>
+      <tr><td class="kw">casio gbd 200</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,09–0,28</td><td class="n">6</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>D. EDIFICE · PRO TREK · VINTAGE · COLLECTION <span class="pill p-ok">Покупка</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ключова дума</th><th class="n">Търсения/мес.</th><th>Конкур.</th><th class="n">CPC (€)</th><th class="n">Продукти</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">casio edifice</td><td class="n">1K–10K</td><td>Средна</td><td class="n">0,08–0,26</td><td class="n">187</td></tr>
+      <tr><td class="kw">casio automatic / casio edifice automatic</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,06–0,15</td><td class="n">9</td></tr>
+      <tr><td class="kw">casio pro trek / protrek / касио про трек</td><td class="n">100–1K</td><td>Ниска–Ср.</td><td class="n">0,08–0,26</td><td class="n">22</td></tr>
+      <tr><td class="kw">casio vintage / casio retro</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,10–0,31</td><td class="n">162</td></tr>
+      <tr><td class="kw">casio f91w / f91w / casio f 91w / casio 91w / casio fw91</td><td class="n">100–1K (всяка)</td><td>Ниска–Ср.</td><td class="n">0,09–0,36</td><td class="n">9</td></tr>
+      <tr><td class="kw">casio f91w цена / casio f 91w цена</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,31</td><td class="n">9</td></tr>
+      <tr><td class="kw">casio a168</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,12–0,26</td><td class="n">25</td></tr>
+      <tr><td class="kw">casio aq 230</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,11–0,32</td><td class="n">16</td></tr>
+      <tr><td class="kw">casio ae1200</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,10–0,26</td><td class="n">6</td></tr>
+      <tr><td class="kw">casio duro / casio mdv 107</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,07–0,26</td><td class="n">9</td></tr>
+      <tr><td class="kw">casio mtp / casio mtp 1302</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,11–0,26</td><td class="n">73</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>E. Generic (без марка) – за фаза 2 <span class="pill p-red">Широк</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ключова дума</th><th class="n">Търсения/мес.</th><th>Конкур.</th><th class="n">CPC (€)</th><th>Целева страница</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">мъжки часовници / часовници мъжки / часовник мъжки</td><td class="n">1K–10K</td><td>Висока</td><td class="n">0,11–0,47</td><td>нова колекция „Мъжки“</td></tr>
+      <tr><td class="kw">дамски часовници / часовници дамски / дамски часовник</td><td class="n">1K–10K</td><td>Висока</td><td class="n">0,12–0,42</td><td>нова колекция „Дамски“</td></tr>
+      <tr><td class="kw">детски часовник / детски часовници</td><td class="n">1K–10K</td><td>Средна</td><td class="n">0,15–0,41</td><td>нова колекция „Детски“</td></tr>
+      <tr><td class="kw">маркови мъжки / дамски часовници</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,09–0,35</td><td>Мъжки / Дамски</td></tr>
+      <tr><td class="kw">евтини мъжки часовници / евтини часовници</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,09–0,29</td><td>„до €50“</td></tr>
+      <tr><td class="kw">соларен часовник</td><td class="n">100–1K</td><td>Средна</td><td class="n">0,06–0,18</td><td>нова „Соларни“</td></tr>
+      <tr><td class="kw">дигитален часовник</td><td class="n">100–1K</td><td>Ниска</td><td class="n">0,08–0,24</td><td>G-SHOCK Digital / Vintage</td></tr>
+      <tr><td class="kw">механични часовници</td><td class="n">100–1K</td><td>Висока</td><td class="n">0,09–0,23</td><td>Edifice Automatic</td></tr>
+      <tr><td class="kw">часовник за подарък</td><td class="n">10–100</td><td>Ниска</td><td class="n">до 0,51</td><td>„Подаръци“ (Q4)</td></tr>
+      <tr><td class="kw">удароустойчив / водоустойчив часовник</td><td class="n">10–100</td><td>Средна</td><td class="n">до 0,29</td><td>G-SHOCK</td></tr>
+      <tr><td class="kw">часовник</td><td class="n">10K–100K</td><td>Ниска</td><td class="n">0,11–0,38</td><td><span class="pill p-red">не</span>, доказано нисък CR</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>F. Негативни ключови думи (споделен списък)</h3>
+  <div class="grid g3">
+    <div class="card"><b>Други марки</b><p class="kw" style="margin:6px 0 0">rolex, tissot, seiko, сейко, citizen, garmin, orient, ориент, invicta, festina, fossil, q&amp;q, восток, vostok, certina, philipp plein, apple watch, xiaomi, samsung, huawei, amazfit</p></div>
+    <div class="card"><b>Неналични продукти</b><p class="kw" style="margin:6px 0 0">mrg, mtg, sheen, калкулатор, синтезатор, пиано, кутии, кутия, каишка*, каишки*, смарт, smart</p><p style="font-size:12.5px;color:var(--muted);margin:6px 0 0">* докато няма аксесоари; „смарт“ без Bluetooth модели</p></div>
+    <div class="card"><b>Нисък интент</b><p class="kw" style="margin:6px 0 0">втора употреба, употребяван, olx, bazar, реплика, копие, фалшив, как да, настройка, инструкция, упътване, ремонт*, батерия*, безплатно, работа</p><p style="font-size:12.5px;color:var(--muted);margin:6px 0 0">* без локалната кампания, ако магазините предлагат услугата</p></div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section id="strategy">
+  <h2>Рекламна стратегия: от performance нагоре по фунията</h2>
+  <p class="lead">Стартираме от заявките и продуктите с най-висок интент. Когато има достатъчно конверсии, качваме средната и горната част на фунията. Целта е да сме в пълна сила преди Black Friday (27.11) и Коледа.</p>
+
+  <div class="grid g4">
+    <div class="phase"><div class="ph">Фаза 0 · седм. 1</div><h4>Основи</h4>
+      <ul class="clean">
+        <li>Merchant Center през Google &amp; YouTube app, одобрен фийд</li>
+        <li>Оптимизирани заглавия и custom labels във фийда</li>
+        <li>Purchase конверсия + Enhanced Conversions</li>
+        <li>Consent Mode v2</li>
+        <li>Поправка на Unassigned в GA4</li>
+        <li>Връзки GA4 ↔ Ads ↔ GBP</li>
+      </ul></div>
+    <div class="phase"><div class="ph">Фаза 1 · седм. 2–6</div><h4>Performance ядро</h4>
+      <ul class="clean">
+        <li>PMax с продуктовия фийд, по серии</li>
+        <li>Search: Casio магазин</li>
+        <li>Search: модели и серии</li>
+        <li>Search: Casio категория и пол</li>
+        <li>Цел: 30+ конверсии / 30 дни</li>
+      </ul></div>
+    <div class="phase"><div class="ph">Фаза 2 · седм. 6–10</div><h4>Средна фуния</h4>
+      <ul class="clean">
+        <li>Generic Search (мъжки, дамски, детски, соларни)</li>
+        <li>Локален Search, Sofia + location assets</li>
+        <li>Q4 „Подаръци“ и Black Friday</li>
+        <li>Преход към tROAS</li>
+      </ul></div>
+    <div class="phase"><div class="ph">Фаза 3 · от седм. 8</div><h4>Горна фуния</h4>
+      <ul class="clean">
+        <li>Demand Gen: ремаркетинг (разглеждали, кошница)</li>
+        <li>Demand Gen / YouTube Shorts с фийд: prospecting</li>
+        <li>Lookalike по купувачи</li>
+        <li>Сезонни видео кампании</li>
+      </ul></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Ключови решения</h3>
+    <ul class="clean">
+      <li><b>Bidding:</b> Maximize Conversions без target за първите 2–3 седмици. След 30+ конверсии за 30 дни преминаваме на Maximize Conversion Value с tROAS. Начален tROAS 400% (break-even при марж 25%), после го прецизираме по реалния марж.</li>
+      <li><b>Фийд = стратегия.</b> Custom labels: <span class="kw">custom_label_0</span> = серия, <span class="kw">custom_label_1</span> = ценови клас (до €50 / €50–150 / €150+), <span class="kw">custom_label_2</span> = бестселър / нов / промо. Продуктите под €30 ги изключваме от PMax, защото CPA ще изяде маржа.</li>
+      <li><b>Без generic думи във фаза 1.</b> Старата кампания доказа, че „часовник“ и подобни носят трафик с 0,7–0,8% конверсия.</li>
+      <li><b>Гео:</b> България. Локалната кампания е с радиус 10–15 км около двата Хит Макс в София.</li>
+      <li><b>Сезонност:</b> seasonality adjustment за Black Friday уикенда. При добър ROAS: временно увеличение на бюджета от 20.11 до 21.12.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4.2 CAMPAIGNS -->
+<section id="campaigns">
+  <h2><span class="num">4.2</span>Структура на кампаниите</h2>
+  <p class="lead">Конвенция за имената: <span class="kw">[Фаза] | [Тип] | [Тема] | [Bidding]</span>. Общ бюджет €40/ден. В етикетите е показано „фаза 1 → пълна структура“. Очакван CPC €0,10–0,45.</p>
+
+  <div class="camp">
+    <div class="hd"><h4>P1 | PMax | Продуктов фийд – по серии</h4><div class="meta"><span class="pill p-ok">Фаза 1</span><span class="pill p-info">€20 → €15/ден</span><span class="pill p-warn">Max Conv → tROAS</span></div></div>
+    <div class="bd">
+      <p style="margin-top:0">Основният двигател на продажби. Shopping, Search, YouTube, Display и Gmail от един фийд. Asset група за всяка серия, за да има отделни послания и сигнали.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Asset група</th><th>Listing group (фийд)</th><th>Search themes / сигнали</th></tr></thead>
+        <tbody>
+          <tr><td><b>G-SHOCK</b></td><td>custom_label_0 = G-SHOCK</td><td class="kw">g shock, casio g shock, ga 2100, dw 5600, mudmaster, g shock цена</td></tr>
+          <tr><td><b>EDIFICE + PRO TREK</b></td><td>EDIFICE, PRO TREK</td><td class="kw">casio edifice, casio automatic, casio pro trek, механичен часовник</td></tr>
+          <tr><td><b>VINTAGE</b></td><td>VINTAGE</td><td class="kw">casio vintage, casio retro, casio f91w, casio a168, ретро часовник</td></tr>
+          <tr><td><b>Дамски (Baby-G + Women)</b></td><td>BABY-G, COLLECTION WOMEN</td><td class="kw">дамски часовник casio, g shock дамски, baby g</td></tr>
+          <tr><td><b>Collection Men (€30+)</b></td><td>COLLECTION MEN, цена ≥ €30</td><td class="kw">мъжки часовник casio, casio mtp, casio duro</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:0">Аудиторни сигнали: посетители на сайта (GA4), купувачи (Customer Match от Shopify), custom segment от търсения на G-SHOCK / Casio. Брандови изключения (account-level) за „g watches“.</p>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P1 | Search | Casio магазин</h4><div class="meta"><span class="pill p-ok">Фаза 1</span><span class="pill p-info">€4 → €3/ден</span><span class="pill p-warn">Max Clicks (таван €0,35) → Max Conv</span></div></div>
+    <div class="bd">
+      <div class="tbl"><table>
+        <thead><tr><th>Ad group</th><th>Ключови думи (exact / phrase)</th><th>Целева страница</th></tr></thead>
+        <tbody>
+          <tr><td>Casio Shop</td><td class="kw">[casio shop] [касио шоп] "casio магазин" "casio магазин софия" [casio shop sofia]</td><td>Начална</td></tr>
+          <tr><td>Casio BG</td><td class="kw">[casio bg] [casiobg] [casio bulgaria] [casio българия]</td><td>Начална</td></tr>
+          <tr><td>G Watches</td><td class="kw">[g watches] [gwatches] [g watches bg]</td><td>Начална</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:13px;margin-bottom:0">Послание в RSA: „Оторизиран търговец на Casio · 2 г. гаранция · Безплатна доставка над €100 · 2 магазина в София“. Location + sitelink + callout assets.</p>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P1 | Search | Модели и серии</h4><div class="meta"><span class="pill p-ok">Фаза 1</span><span class="pill p-info">€9 → €7/ден</span><span class="pill p-warn">Max Conv</span></div></div>
+    <div class="bd">
+      <p style="margin-top:0">Най-висок интент и най-нисък CPC. Всяка ad group води към колекцията на серията или към филтриран модел.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Ad group</th><th>Ключови думи</th><th>Целева страница</th></tr></thead>
+        <tbody>
+          <tr><td>G-SHOCK GA-2100</td><td class="kw">"ga 2100" "ga2100" "g shock ga 2100" "casio ga 2100"</td><td>търсене / GA-2100</td></tr>
+          <tr><td>G-SHOCK 5600</td><td class="kw">"dw 5600" "gw b5600" "g shock 5600" "casio 5600"</td><td>G-SHOCK Digital</td></tr>
+          <tr><td>G-SHOCK GA-100 / GA-700</td><td class="kw">"g shock ga 100" "ga 700"</td><td>G-SHOCK Analog-Digital</td></tr>
+          <tr><td>G-SHOCK Master of G</td><td class="kw">"casio mudmaster" "casio rangeman" "gbd 200"</td><td>Master of G</td></tr>
+          <tr><td>EDIFICE</td><td class="kw">"casio edifice" "edifice" "casio edifice automatic" "casio automatic"</td><td>EDIFICE / Automatic</td></tr>
+          <tr><td>PRO TREK</td><td class="kw">"casio pro trek" "protrek" "касио про трек" "pro trek цена"</td><td>PRO TREK</td></tr>
+          <tr><td>Vintage F-91W</td><td class="kw">"casio f91w" "f91w" "casio f 91w" "casio 91w" "f91w цена"</td><td>продукт F-91W</td></tr>
+          <tr><td>Vintage A168 / A700</td><td class="kw">"casio a168" "a168" "casio a700" "casio a158"</td><td>Vintage Iconic</td></tr>
+          <tr><td>Vintage общо</td><td class="kw">"casio vintage" "casio retro"</td><td>VINTAGE</td></tr>
+          <tr><td>Collection хитове</td><td class="kw">"casio aq 230" "casio ae1200" "casio duro" "casio mdv 107" "casio mtp 1302"</td><td>съответен модел</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P1 | Search | Casio категория и пол</h4><div class="meta"><span class="pill p-ok">Фаза 1</span><span class="pill p-info">€7 → €5/ден</span><span class="pill p-warn">Max Conv</span></div></div>
+    <div class="bd">
+      <div class="tbl"><table>
+        <thead><tr><th>Ad group</th><th>Ключови думи</th><th>Целева страница</th></tr></thead>
+        <tbody>
+          <tr><td>Casio часовници</td><td class="kw">"casio часовници" "часовници casio" "касио часовници" "часовници касио" "часовник casio" [casio]</td><td>Начална / всички</td></tr>
+          <tr><td>G-SHOCK общо</td><td class="kw">"g shock" "casio g shock" "часовник g shock" "g shock цена" "g shock solar"</td><td>G-SHOCK</td></tr>
+          <tr><td>Мъжки Casio</td><td class="kw">"мъжки часовници casio" "мъжки часовник casio"</td><td>нова „Мъжки“</td></tr>
+          <tr><td>Дамски Casio</td><td class="kw">"дамски часовници casio" "дамски часовник casio" "casio дамски" "g shock дамски"</td><td>нова „Дамски“</td></tr>
+          <tr><td>Детски Casio</td><td class="kw">"детски часовник casio"</td><td>нова „Детски“</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P2 | Search | Generic – мъжки, дамски, детски, функции</h4><div class="meta"><span class="pill p-warn">Фаза 2</span><span class="pill p-info">€4/ден</span><span class="pill p-warn">tROAS / таван на CPC</span></div></div>
+    <div class="bd">
+      <p style="margin-top:0">Пускаме я, когато новите колекции са готови. Само phrase и exact, с тесни RSA и цени в рекламата.</p>
+      <p class="kw" style="margin:0">Мъжки: "мъжки часовници" "часовници мъжки" "маркови мъжки часовници" · Дамски: "дамски часовници" "дамски часовник" "маркови дамски часовници" · Детски: "детски часовник" "детски часовници" · Функции: "соларен часовник" "дигитален часовник" "водоустойчив часовник" "удароустойчив часовник" "механичен часовник"</p>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P2 | Search | Локално София + Q4 Подаръци</h4><div class="meta"><span class="pill p-warn">Фаза 2</span><span class="pill p-info">€2/ден</span><span class="pill p-warn">Max Conv</span></div></div>
+    <div class="bd">
+      <p class="kw" style="margin-top:0">Локално (радиус 10–15 км): "магазин за часовници софия" "магазини за часовници" "casio магазин софия" "casio the mall" · Подаръци (20.11–24.12): "часовник за подарък" "подарък за мъж часовник" "подарък за жена часовник"</p>
+      <p style="font-size:13px;margin-bottom:0">Location assets от двата GBP профила. Конверсии: покупка + „упътвания“ / обаждане.</p>
+    </div>
+  </div>
+
+  <div class="camp">
+    <div class="hd"><h4>P3 | Demand Gen | Ремаркетинг + Prospecting</h4><div class="meta"><span class="pill p-red">Фаза 3</span><span class="pill p-info">€4/ден</span><span class="pill p-warn">Max Conv</span></div></div>
+    <div class="bd">
+      <ul class="clean" style="margin-top:0">
+        <li><b>Ad group 1 – Ремаркетинг:</b> разглеждали продукт (30 дни), добавили в кошница без покупка (14 дни). Продуктов фийд + carousel.</li>
+        <li><b>Ad group 2 – Prospecting:</b> lookalike по купувачи + интереси (outdoor, спорт, мода), YouTube Shorts и Discover. Видео 15 сек. с G-SHOCK / Edifice.</li>
+        <li>Сезонни послания: Black Friday, Коледа, „Подарък до €50 / €100“.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Бюджет – €40 на ден (≈ €1 200 на месец)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Кампания</th><th class="n">Фаза 1<br>€/ден</th><th class="n">Пълна структура<br>€/ден</th><th class="n">Пълна структура<br>≈ €/месец</th></tr></thead>
+    <tbody>
+      <tr><td>PMax | Продуктов фийд</td><td class="n">20</td><td class="n">15</td><td class="n">456</td></tr>
+      <tr><td>Search | Модели и серии</td><td class="n">9</td><td class="n">7</td><td class="n">213</td></tr>
+      <tr><td>Search | Casio категория и пол</td><td class="n">7</td><td class="n">5</td><td class="n">152</td></tr>
+      <tr><td>Search | Casio магазин</td><td class="n">4</td><td class="n">3</td><td class="n">91</td></tr>
+      <tr><td>Search | Generic</td><td class="n">—</td><td class="n">4</td><td class="n">122</td></tr>
+      <tr><td>Search | Локално + Подаръци</td><td class="n">—</td><td class="n">2</td><td class="n">61</td></tr>
+      <tr><td>Demand Gen | Ремаркетинг + Prospecting</td><td class="n">—</td><td class="n">4</td><td class="n">122</td></tr>
+      <tr><td><b>Общо</b></td><td class="n"><b>40</b></td><td class="n"><b>40</b></td><td class="n"><b>≈ 1 216</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout info"><b>Бюджетът остава €40/ден, само се преразпределя</b>Във фаза 1 целият бюджет отива в четирите кампании с най-висок интент. От фаза 2 и 3 част от него се мести към Generic, Локално и Demand Gen. Ако ROAS през ноември е над целта, препоръчваме временно увеличение за Black Friday (27–30.11) и седмиците преди Коледа.</div>
+  <h3>Рентабилност при марж 25–40%</h3>
+  <div class="grid g3">
+    <div class="kpi"><div class="l">Break-even ROAS</div><div class="v">250–400%</div><div class="s">= 1 / марж (40% → 250%, 25% → 400%)</div></div>
+    <div class="kpi"><div class="l">Начален tROAS</div><div class="v">400%</div><div class="s">безопасен и при най-ниския марж; коригираме по реални данни</div></div>
+    <div class="kpi"><div class="l">Максимален CPA</div><div class="v">€23–37</div><div class="s">при среден приход ≈ €93 и марж 25–40%</div></div>
+  </div>
+  <p style="color:var(--muted);font-size:13.5px">KPI за първите 6 седмици: ROAS ≥ 400% за PMax, CPA ≤ €23 (консервативно, при 25% марж), Search Impression Share ≥ 70% за „Casio магазин“ и моделите. Реалният ROAS ще го изчислим, след като рекламите тръгнат и проследяването е поправено.</p>
+</section>
+
+<!-- NEXT -->
+<section id="next">
+  <h2>Следващи стъпки</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Задача</th><th>Кой</th><th>Срок</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Активиране на Merchant Center през Google &amp; YouTube в Shopify, одобряване на фийда</td><td>Агенция + клиент</td><td>седм. 1</td></tr>
+      <tr><td>2</td><td>Поправка на GA4 (Unassigned, add_to_cart, връзка с Search Console) + Consent Mode v2</td><td>Агенция</td><td>седм. 1</td></tr>
+      <tr><td>3</td><td>Отговор на всички отзиви + UTM линкове + описание в двата GBP профила</td><td>Клиент / агенция</td><td>седм. 1</td></tr>
+      <tr><td>4</td><td>Нови колекции: Мъжки, Дамски, Детски, Соларни, Подаръци до €50 / €100</td><td>Клиент</td><td>седм. 2–3</td></tr>
+      <tr><td>5</td><td>Старт на PMax + 3 Search кампании (фаза 1)</td><td>Агенция</td><td>седм. 2</td></tr>
+      <tr><td>6</td><td>Generic + локално + Q4 подаръци (фаза 2), подготовка на Black Friday</td><td>Агенция</td><td>до 15.11</td></tr>
+      <tr><td>7</td><td>Demand Gen ремаркетинг + prospecting (фаза 3)</td><td>Агенция</td><td>до 20.11</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</main>
+<footer>G WATCHES · Одит и стратегия за Google Ads · Октомври 2026</footer>
+</body>
+</html>
